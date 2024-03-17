@@ -1,0 +1,21 @@
+.page {
+  background: url("../../../public/main-background.jpg") 0 40%/cover no-repeat;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 60px;
+  height: 100vh;
+  padding: 120px 0;
+}
+
+.phraze {
+  color: var(--white-text);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 85px;
+  max-width: 420px;
+}

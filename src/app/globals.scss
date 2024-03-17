@@ -1,0 +1,99 @@
+:root {
+  --white-text: #fff;
+  --black-text: rgb(32, 55, 40);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+}
+
+body {
+  color: var(--black-text);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a:not {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-text);
+  outline: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  background: none;
+  border: 0;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+[class*="container"] {
+  max-width: 1504px;
+  margin: 0 auto;
+  padding: 0 30px;
+  flex-direction: column;
+}
+
+@media (max-width: 767.98px) {
+  [class*="container"] {
+    padding: 0 15px;
+  }
+}
