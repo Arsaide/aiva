@@ -14,7 +14,7 @@
 
 .phraze {
   color: var(--white-text);
-  font-size: 60px;
+  font-size: clamp(45px, 3vw, 60px);
   font-weight: 700;
   line-height: 85px;
   max-width: 420px;

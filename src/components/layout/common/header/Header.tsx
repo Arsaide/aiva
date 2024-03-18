@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './Header.module.scss'
 import Link from "next/link";
 import useScrollHandler from "@/hooks/use-scroll-handler/useScrollHandler";
+import {Menu, X} from "lucide-react";
 
 const Header = () => {
     const { visible } = useScrollHandler();
@@ -35,18 +36,14 @@ const Header = () => {
                 </div>
                 {isOpenMenu ? (
                     <div className={styles.menu__burger} onClick={toggleCloseMenu}>
-                        <div className={styles.menu__burgerLine}/>
+                        <X  color={'#fff'} width={44} height={44} />
                     </div>
                 ) : (
                     <div className={styles.menu__burger} onClick={toggleOpenMenu}>
-                        <div className={styles.menu__burgerLine}/>
-                        <div className={styles.menu__burgerLine}/>
-                        <div className={styles.menu__burgerLine}/>
+                        <Menu color={'#fff'} width={44} height={44}/>
                     </div>
                 )}
-                <nav className={`${styles.menu} ${isOpenMenu ? styles._active : ''}`} style={{
-                    // transform: isOpenMenu ? 'translateX(0)' : 'translateX(-100%)'
-                }}>
+                <nav className={`${styles.menu} ${isOpenMenu ? styles._active : ''}`}>
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>
                             <Link
