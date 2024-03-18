@@ -7,19 +7,6 @@ import useScrollHandler from "@/hooks/use-scroll-handler/useScrollHandler";
 const Header = () => {
     const { visible } = useScrollHandler();
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 1199.98);
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        handleResize();
-
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
 
     const toggleOpenMenu = () => {
         setIsOpenMenu(true);
@@ -58,7 +45,7 @@ const Header = () => {
                     </div>
                 )}
                 <nav className={styles.menu} style={{
-                    transform: isMobile ? (isOpenMenu ? 'translateX(0)' : 'translateX(-100%)') : 'translateX(0)'
+                    transform: isOpenMenu ? 'translateX(0)' : 'translateX(-100%)'
                 }}>
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>
