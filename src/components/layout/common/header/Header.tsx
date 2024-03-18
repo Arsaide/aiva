@@ -44,8 +44,8 @@ const Header = () => {
                         <div className={styles.menu__burgerLine}/>
                     </div>
                 )}
-                <nav className={styles.menu} style={{
-                    transform: isOpenMenu ? 'translateX(0)' : 'translateX(-100%)'
+                <nav className={`${styles.menu} ${isOpenMenu ? styles._active : ''}`} style={{
+                    // transform: isOpenMenu ? 'translateX(0)' : 'translateX(-100%)'
                 }}>
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>

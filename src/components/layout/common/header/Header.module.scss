@@ -69,6 +69,10 @@
       background-color: var(--white-text);
       margin: 5px;
     }
+
+    &._active {
+      transform: translateX(0);
+    }
   }
 
   @media(max-width: 1199.98px) {
