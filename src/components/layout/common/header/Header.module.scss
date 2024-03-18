@@ -32,7 +32,7 @@
   }
 
   .menu {
-    display: flex;
+    //display: flex;
 
     &__list {
       display: flex;
@@ -58,7 +58,6 @@
     &__burger {
       display: none;
       position: absolute;
-      right: 0;
       right: 30px;
       cursor: pointer;
       z-index: 100;
@@ -72,7 +71,7 @@
     }
   }
 
-  @media only screen and (max-width: 767.98px) {
+  @media(max-width: 1199.98px) {
     .menu {
       position: absolute;
       top: 0;

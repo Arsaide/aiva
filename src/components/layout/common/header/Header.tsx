@@ -6,14 +6,14 @@ import useScrollHandler from "@/hooks/use-scroll-handler/useScrollHandler";
 
 const Header = () => {
     const { visible } = useScrollHandler();
-    const [openMenu, setOpenMenu] = useState<boolean>(false)
+    const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
 
     const toggleOpenMenu = () => {
-        setOpenMenu(true);
+        setIsOpenMenu(true);
     }
 
     const toggleCloseMenu = () => {
-        setOpenMenu(false);
+        setIsOpenMenu(false);
     }
 
     const headerStyles = {
@@ -33,7 +33,7 @@ const Header = () => {
                         </Link>
                     </h1>
                 </div>
-                {openMenu ? (
+                {isOpenMenu ? (
                     <div className={styles.menu__burger} onClick={toggleCloseMenu}>
                         <div className={styles.menu__burgerLine}/>
                     </div>
@@ -44,7 +44,9 @@ const Header = () => {
                         <div className={styles.menu__burgerLine}/>
                     </div>
                 )}
-                <nav className={styles.menu} style={{ transform: openMenu ? 'translateX(0)' : 'translateX(-100%)' }}>
+                <nav className={styles.menu} style={{
+                    transform: window.innerWidth <= 1199.98 ? (isOpenMenu ? 'translateX(0)' : 'translateX(-100%)') : 'translateX(0)'
+                }}>
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>
                             <Link
