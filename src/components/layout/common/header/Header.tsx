@@ -9,6 +9,17 @@ const Header = () => {
     const { visible } = useScrollHandler();
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
 
+    useEffect(() => {
+        if (isOpenMenu) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [isOpenMenu]);
+
     const toggleOpenMenu = () => {
         setIsOpenMenu(true);
     }
