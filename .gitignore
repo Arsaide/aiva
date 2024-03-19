@@ -37,3 +37,8 @@ next-env.d.ts
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
 /.idea/git_toolbox_prj.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/jsLinters/eslint.xml
+/.idea/prettier.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
