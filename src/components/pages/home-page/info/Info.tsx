@@ -46,11 +46,26 @@ const Info = () => {
                         <li className={styles.icon}>
                             <Users width={100} height={100} />
                         </li>
+                        <li className={styles.mobileCard}>
+                            <p>Штат более</p>
+                            <strong>{employeeCount}</strong>
+                            <p>сотрудников</p>
+                        </li>
                         <li className={styles.icon}>
                             <Truck width={100} height={100} />
                         </li>
+                        <li className={styles.mobileCard}>
+                            <p>Более</p>
+                            <strong>{shipmentCount}</strong>
+                            <p>грузоперевозок за месяц</p>
+                        </li>
                         <li className={styles.icon}>
                             <Trophy width={100} height={100} />
+                        </li>
+                        <li className={styles.mobileCard}>
+                            <p>Высокий</p>
+                            <strong>{ratingCount}</strong>
+                            <p>рейтинг в ATI</p>
                         </li>
                     </ul>
                     <ul className={styles.cards}>
