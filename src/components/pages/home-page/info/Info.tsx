@@ -8,14 +8,15 @@ const Info = () => {
     const [employeeCount, setEmployeeCount] = useState<number>(0);
     const [shipmentCount, setShipmentCount] = useState<number>(0);
     const [ratingCount, setRatingCount] = useState<number>(0);
-    const [isVisible, setIsVisible] = useState<boolean>(false);
     const [ref, inView] = useInView();
+
+    console.log(inView);
 
     const increaseCount = (
         target: number,
         setter: React.Dispatch<React.SetStateAction<number>>,
     ) => {
-        const step: number = target / 100; // Вычисляем шаг увеличения числа
+        const step: number = target / 100;
         let current: number = 0;
 
         const timer = setInterval(() => {
@@ -30,7 +31,6 @@ const Info = () => {
 
     useEffect(() => {
         if (inView) {
-            setIsVisible(true);
             increaseCount(1000, setEmployeeCount);
             increaseCount(1000, setShipmentCount);
             increaseCount(5, setRatingCount);
