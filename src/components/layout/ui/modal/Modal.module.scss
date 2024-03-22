@@ -1,0 +1,40 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0 , 0, .4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.close {
+  opacity: 1;
+  transition: opacity .2s ease;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.cnt {
+  position: relative;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  max-width: 60vh;
+  margin: 0 15px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+}
