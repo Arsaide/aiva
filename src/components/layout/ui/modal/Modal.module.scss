@@ -21,9 +21,7 @@
 .close {
   opacity: 1;
   transition: opacity .2s ease;
-  padding: 5px 10px;
-  border: 1px solid #000;
-  border-radius: 6px;
+  cursor: pointer;
   &:hover {
     opacity: .7;
   }
@@ -34,7 +32,21 @@
   padding: 20px;
   border-radius: 12px;
   background-color: #fff;
-  max-width: 60vh;
+  max-width: 700px;
+  max-height: 95vh;
   margin: 0 15px;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+  overflow-y: auto;
+
+}
+
+.btn {
+  display: flex;
+  justify-content: end;
+}
+
+@media(max-height: 100px) {
+  .cnt {
+
+  }
 }

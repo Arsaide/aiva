@@ -1,6 +1,7 @@
 import React, { Dispatch, FC, SetStateAction, useEffect } from 'react';
 import styles from './Modal.module.scss';
 import SmallButton from '@/components/layout/ui/buttons/small-button/SmallButton';
+import { X } from 'lucide-react';
 
 interface IModal {
     children: React.ReactNode;
@@ -33,19 +34,29 @@ const Modal: FC<IModal> = ({ children, active, setActive }) => {
         >
             {active && (
                 <div className={styles.cnt} onClick={e => e.stopPropagation()}>
+                    <div className={styles.btn}>
+                        <X
+                            onClick={() => setActive(false)}
+                            className={styles.close}
+                            width={30}
+                            height={30}
+                        />
+                    </div>
                     <div
                         className={styles.content}
                         onClick={e => e.stopPropagation()}
                     >
                         {children}
                     </div>
-                    <SmallButton
-                        text={'Закрыть'}
-                        onClick={e => {
-                            e.stopPropagation();
-                            setActive(false);
-                        }}
-                    />
+                    <div className={styles.btn}>
+                        <SmallButton
+                            text={'Закрыть'}
+                            onClick={e => {
+                                e.stopPropagation();
+                                setActive(false);
+                            }}
+                        />
+                    </div>
                 </div>
             )}
         </div>
