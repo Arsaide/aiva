@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { ICardList } from '@/components/pages/home-page/car-park/ICarParkList';
+import styles from './CarCard.module.scss';
 
 interface ICarCard {
     card: ICardList;
