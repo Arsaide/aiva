@@ -19,6 +19,7 @@ const CarPark = () => {
                         <li
                             key={item.id}
                             onClick={() => setActiveModalId(item.id)}
+                            className={styles.card}
                         >
                             <Image
                                 src={item.card.img}
@@ -27,7 +28,9 @@ const CarPark = () => {
                                 height={200}
                                 loading={'lazy'}
                             />
-                            <h4>{item.card.title}</h4>
+                            <h4 className={styles.card__title}>
+                                {item.card.title}
+                            </h4>
                         </li>
                     ))}
                 </ul>

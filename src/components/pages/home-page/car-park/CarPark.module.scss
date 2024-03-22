@@ -1,0 +1,24 @@
+.carpark {
+
+}
+
+.title {
+
+}
+
+.list {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 30px;
+}
+
+.card {
+  flex: 0 0 auto;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+  border-radius: 15px;
+
+  &__title {
+
+  }
+}
