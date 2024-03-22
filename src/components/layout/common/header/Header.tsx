@@ -1,11 +1,13 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState, useCallback } from 'react';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
+    const [scrollPosition, setScrollPosition] = useState<number>(0);
+    const [menuColor, setMenuColor] = useState<string>('fff');
 
     useEffect(() => {
         if (isOpenMenu) {
@@ -17,6 +19,26 @@ const Header = () => {
             document.body.style.overflow = 'auto';
         };
     }, [isOpenMenu]);
+
+    const handleScroll = useCallback(() => {
+        const position = window.scrollY;
+        setScrollPosition(position);
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (scrollPosition >= window.innerHeight) {
+            setMenuColor('#333');
+        } else {
+            setMenuColor('#fff');
+        }
+    }, [scrollPosition]);
 
     const toggleOpenMenu = () => {
         setIsOpenMenu(true);
@@ -43,14 +65,14 @@ const Header = () => {
                         className={styles.menu__burger}
                         onClick={toggleCloseMenu}
                     >
-                        <X color={'#fff'} width={44} height={44} />
+                        <X color={menuColor} width={44} height={44} />
                     </div>
                 ) : (
                     <div
                         className={styles.menu__burger}
                         onClick={toggleOpenMenu}
                     >
-                        <Menu color={'#fff'} width={44} height={44} />
+                        <Menu color={menuColor} width={44} height={44} />
                     </div>
                 )}
                 <nav
@@ -58,33 +80,54 @@ const Header = () => {
                 >
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>
-                            <Link className={styles.menu__link} href="/">
+                            <Link
+                                style={{ color: menuColor }}
+                                className={styles.menu__link}
+                                href="/"
+                            >
                                 Мы перевозим
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link className={styles.menu__link} href={'/'}>
+                            <Link
+                                style={{ color: menuColor }}
+                                className={styles.menu__link}
+                                href={'/'}
+                            >
                                 Автопарк
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link className={styles.menu__link} href={'/'}>
+                            <Link
+                                style={{ color: menuColor }}
+                                className={styles.menu__link}
+                                href={'/'}
+                            >
                                 Клиенты
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link className={styles.menu__link} href={'/'}>
+                            <Link
+                                style={{ color: menuColor }}
+                                className={styles.menu__link}
+                                href={'/'}
+                            >
                                 Документы
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link className={styles.menu__link} href={'/'}>
+                            <Link
+                                style={{ color: menuColor }}
+                                className={styles.menu__link}
+                                href={'/'}
+                            >
                                 Контакты
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
                             <Link
                                 className={styles.menu__link}
+                                style={{ color: menuColor }}
                                 href="/vacancies"
                             >
                                 Вакансии
@@ -97,4 +140,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default memo(Header);

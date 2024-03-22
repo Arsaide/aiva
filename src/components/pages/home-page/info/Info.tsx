@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Info.module.scss';
 import { Trophy, Truck, Users } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
@@ -10,22 +10,26 @@ const Info = () => {
     const [ratingCount, setRatingCount] = useState<number>(0);
     const [ref, inView] = useInView();
 
-    const increaseCount = (
-        target: number,
-        setter: React.Dispatch<React.SetStateAction<number>>,
-    ) => {
-        const step: number = target / 100;
-        let current: number = 0;
+    const increaseCount = useMemo(
+        () =>
+            (
+                target: number,
+                setter: React.Dispatch<React.SetStateAction<number>>,
+            ) => {
+                const step: number = target / 100;
+                let current: number = 0;
 
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                clearInterval(timer);
-                current = target;
-            }
-            setter(Math.floor(current));
-        }, 20);
-    };
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+                    setter(Math.floor(current));
+                }, 20);
+            },
+        [],
+    );
 
     useEffect(() => {
         if (inView) {
@@ -92,4 +96,4 @@ const Info = () => {
     );
 };
 
-export default Info;
+export default memo(Info);
