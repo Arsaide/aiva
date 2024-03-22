@@ -1,6 +1,6 @@
 import { ICarParkList } from '@/components/pages/home-page/car-park/ICarParkList';
 
-export const carParkList: ICarParkList[] = [
+export const carParkDB: ICarParkList[] = [
     {
         id: 1,
         card: {
@@ -53,7 +53,7 @@ export const carParkList: ICarParkList[] = [
     {
         id: 3,
         card: {
-            title: 'БОРТОВОЙ(ШАЛАНДА)',
+            title: 'БОРТОВОЙ (ШАЛАНДА)',
             desc:
                 'Применяется для перевозки грузов, устойчивых к внешним погодным' +
                 ' воздействиям. Оптимальным выбором бортовые полуприцепы становятся' +

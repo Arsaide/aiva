@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Main.module.scss';
-import Button from '@/components/layout/ui/button/Button';
+import LargeButton from '@/components/layout/ui/buttons/large-button/LargeButton';
 
 const Main = () => {
     return (
@@ -10,7 +10,7 @@ const Main = () => {
                     <h2 className={styles.phraze}>
                         В Авангарде траспортной логистики
                     </h2>
-                    <Button text={'Заказать звонок'} href={'/'} />
+                    <LargeButton text={'Заказать звонок'} href={'/'} />
                 </div>
             </div>
         </section>

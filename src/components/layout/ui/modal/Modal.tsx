@@ -1,5 +1,6 @@
 import React, { Dispatch, FC, SetStateAction, useEffect } from 'react';
 import styles from './Modal.module.scss';
+import SmallButton from '@/components/layout/ui/buttons/small-button/SmallButton';
 
 interface IModal {
     children: React.ReactNode;
@@ -37,16 +38,14 @@ const Modal: FC<IModal> = ({ children, active, setActive }) => {
                         onClick={e => e.stopPropagation()}
                     >
                         {children}
-                        <button
-                            className={styles.close}
-                            onClick={e => {
-                                e.stopPropagation();
-                                setActive(false);
-                            }}
-                        >
-                            Закрыть
-                        </button>
                     </div>
+                    <SmallButton
+                        text={'Закрыть'}
+                        onClick={e => {
+                            e.stopPropagation();
+                            setActive(false);
+                        }}
+                    />
                 </div>
             )}
         </div>

@@ -1,0 +1,13 @@
+.smallBtn {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  transition: background-color .3s ease-out 0s;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: var(--red-text);
+    border-color: transparent;
+  }
+}
