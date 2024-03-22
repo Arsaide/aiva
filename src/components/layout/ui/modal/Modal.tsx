@@ -30,15 +30,25 @@ const Modal: FC<IModal> = ({ children, active, setActive }) => {
             }
             onClick={() => setActive(false)}
         >
-            <div className={styles.cnt} onClick={e => e.stopPropagation()}>
-                <div className={styles.content}>{children}</div>
-                <button
-                    className={styles.close}
-                    onClick={() => setActive(false)}
-                >
-                    Закрыть
-                </button>
-            </div>
+            {active && (
+                <div className={styles.cnt} onClick={e => e.stopPropagation()}>
+                    <div
+                        className={styles.content}
+                        onClick={e => e.stopPropagation()}
+                    >
+                        {children}
+                        <button
+                            className={styles.close}
+                            onClick={e => {
+                                e.stopPropagation();
+                                setActive(false);
+                            }}
+                        >
+                            Закрыть
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
