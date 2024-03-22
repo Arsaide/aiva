@@ -10,8 +10,6 @@ const Info = () => {
     const [ratingCount, setRatingCount] = useState<number>(0);
     const [ref, inView] = useInView();
 
-    console.log(inView);
-
     const increaseCount = (
         target: number,
         setter: React.Dispatch<React.SetStateAction<number>>,

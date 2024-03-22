@@ -1,6 +1,6 @@
 :root {
   --white-text: #fff;
-  --black-text: rgb(32, 55, 40);
+  --red-text: rgb(218, 41, 28);
 }
 
 *,
@@ -36,7 +36,7 @@ dd {
 }
 
 body {
-  color: var(--black-text);
+  color: var(--red-text);
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -59,7 +59,7 @@ img {
 
 a {
   text-decoration: none;
-  color: var(--black-text);
+  color: var(--red-text);
   outline: none;
 }
 
