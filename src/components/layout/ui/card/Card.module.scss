@@ -1,0 +1,21 @@
+.card {
+  position: relative;
+  z-index: 5;
+  background-color: var(--white-text);
+  max-width: 580px;
+  padding: 35px 50px;
+  border-radius: 50px;
+
+  &__title {
+    font-size: clamp(19px, 3vw, 23.44px);
+    font-weight: 700;
+    line-height: calc(25/23.44 * 100%);
+    margin-bottom: clamp(20px, 5vw, 40px);
+  }
+
+  &__text {
+    font-size: 14.65px;
+    font-weight: 400;
+    line-height: calc(25/14.65 * 100%);
+  }
+}
