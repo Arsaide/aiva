@@ -12,7 +12,9 @@ interface IModal {
 const Modal: FC<IModal> = ({ children, active, setActive }) => {
     useEffect(() => {
         if (active) {
-            document.body.style.paddingRight = '17px';
+            if (window.innerWidth > 768) {
+                document.body.style.paddingRight = '17px';
+            }
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.paddingRight = '0';
