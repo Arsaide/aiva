@@ -33,7 +33,7 @@ const Info = () => {
 
     useEffect(() => {
         if (inView) {
-            increaseCount(1000, setEmployeeCount);
+            increaseCount(100, setEmployeeCount);
             increaseCount(1000, setShipmentCount);
             increaseCount(5, setRatingCount);
         }
@@ -51,7 +51,7 @@ const Info = () => {
                         <li className={styles.mobileCard}>
                             <p>Штат более</p>
                             <strong>
-                                {employeeCount === 1000
+                                {employeeCount === 100
                                     ? `${employeeCount}+`
                                     : employeeCount}
                             </strong>
@@ -82,7 +82,7 @@ const Info = () => {
                         <li className={styles.card}>
                             <p>Штат более</p>
                             <strong>
-                                {employeeCount === 1000
+                                {employeeCount === 100
                                     ? `${employeeCount}+`
                                     : employeeCount}
                             </strong>
