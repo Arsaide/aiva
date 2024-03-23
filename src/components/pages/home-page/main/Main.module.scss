@@ -13,9 +13,21 @@
 }
 
 .phraze {
+  --fz: clamp(35px, 3vw, 60px);
+  --lh: calc(var(--fz)/85 * 100%);
   color: var(--white-text);
-  font-size: clamp(45px, 3vw, 60px);
+  font-size: var(--fz);
   font-weight: 700;
-  line-height: 85px;
+  line-height: var(--lh);
   max-width: 420px;
+}
+
+@media(max-width: 549.98px) {
+  .content {
+    align-items: center;
+  }
+
+  .phraze {
+    max-width: 260px;
+  }
 }
