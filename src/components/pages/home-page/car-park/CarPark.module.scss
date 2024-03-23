@@ -8,6 +8,19 @@
   font-weight: 700;
   line-height: calc(24.7 / 37.5 * 100%);
   letter-spacing: -4%;
+  color: var(--red-text);
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    width: 130px;
+    height: 2px;
+    background-color: var(--red-text);
+    position: absolute;
+    bottom: -15px;
+  }
 }
 
 .list {

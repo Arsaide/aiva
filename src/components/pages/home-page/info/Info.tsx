@@ -1,7 +1,7 @@
 'use client';
 import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Info.module.scss';
-import { Trophy, Truck, Users } from 'lucide-react';
+import { Star, Trophy, Truck, Users } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 const Info = () => {
@@ -50,7 +50,11 @@ const Info = () => {
                         </li>
                         <li className={styles.mobileCard}>
                             <p>Штат более</p>
-                            <strong>{employeeCount}</strong>
+                            <strong>
+                                {employeeCount === 1000
+                                    ? `${employeeCount}+`
+                                    : employeeCount}
+                            </strong>
                             <p>сотрудников</p>
                         </li>
                         <li className={styles.icon}>
@@ -58,7 +62,11 @@ const Info = () => {
                         </li>
                         <li className={styles.mobileCard}>
                             <p>Более</p>
-                            <strong>{shipmentCount}</strong>
+                            <strong>
+                                {shipmentCount === 1000
+                                    ? `${shipmentCount}+`
+                                    : shipmentCount}
+                            </strong>
                             <p>грузоперевозок за месяц</p>
                         </li>
                         <li className={styles.icon}>
@@ -73,17 +81,28 @@ const Info = () => {
                     <ul className={styles.cards}>
                         <li className={styles.card}>
                             <p>Штат более</p>
-                            <strong>{employeeCount}</strong>
+                            <strong>
+                                {employeeCount === 1000
+                                    ? `${employeeCount}+`
+                                    : employeeCount}
+                            </strong>
                             <p>сотрудников</p>
                         </li>
                         <li className={styles.card}>
                             <p>Более</p>
-                            <strong>{shipmentCount}</strong>
+                            <strong>
+                                {shipmentCount === 1000
+                                    ? `${shipmentCount}+`
+                                    : shipmentCount}
+                            </strong>
                             <p>грузоперевозок за месяц</p>
                         </li>
                         <li className={styles.card}>
                             <p>Высокий</p>
-                            <strong>{ratingCount}</strong>
+                            <strong>
+                                {ratingCount}
+                                <Star width={16} height={16} fill={'#DA291C'} />
+                            </strong>
                             <p>рейтинг в ATI</p>
                         </li>
                     </ul>

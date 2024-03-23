@@ -1,6 +1,7 @@
 .section {
   text-align: center;
   margin: clamp(50px, 5vw, 80px) 0;
+  color: var(--gray-text);
 }
 
 .title {
@@ -8,6 +9,19 @@
   font-weight: 700;
   line-height: calc(24.7 / 37.5 * 100%);
   letter-spacing: -4%;
+  color: var(--red-text);
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    width: 130px;
+    height: 2px;
+    background-color: var(--red-text);
+    position: absolute;
+    bottom: -15px;
+  }
 }
 
 .subTitle {
@@ -53,6 +67,7 @@
   >strong {
     font-size: 20px;
     line-height: calc(32 / 20 * 100%);
+    color: var(--red-text);
     letter-spacing: -4%;
   }
 }
@@ -66,6 +81,7 @@
   >strong {
     font-size: 20px;
     line-height: calc(32 / 20 * 100%);
+    color: var(--red-text);
     letter-spacing: -4%;
   }
 }

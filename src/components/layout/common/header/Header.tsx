@@ -80,54 +80,33 @@ const Header = () => {
                 >
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>
-                            <Link
-                                style={{ color: menuColor }}
-                                className={styles.menu__link}
-                                href="/"
-                            >
+                            <Link className={styles.menu__link} href="/">
                                 Мы перевозим
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link
-                                style={{ color: menuColor }}
-                                className={styles.menu__link}
-                                href={'/'}
-                            >
+                            <Link className={styles.menu__link} href={'/'}>
                                 Автопарк
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link
-                                style={{ color: menuColor }}
-                                className={styles.menu__link}
-                                href={'/'}
-                            >
+                            <Link className={styles.menu__link} href={'/'}>
                                 Клиенты
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link
-                                style={{ color: menuColor }}
-                                className={styles.menu__link}
-                                href={'/'}
-                            >
+                            <Link className={styles.menu__link} href={'/'}>
                                 Документы
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <Link
-                                style={{ color: menuColor }}
-                                className={styles.menu__link}
-                                href={'/'}
-                            >
+                            <Link className={styles.menu__link} href={'/'}>
                                 Контакты
                             </Link>
                         </li>
                         <li className={styles.menu__item}>
                             <Link
                                 className={styles.menu__link}
-                                style={{ color: menuColor }}
                                 href="/vacancies"
                             >
                                 Вакансии
