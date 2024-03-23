@@ -3,11 +3,14 @@ import React, { memo, useEffect, useState, useCallback } from 'react';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import { Color } from '@/lib/colors';
+import Logo from '@/components/layout/icons/logo/logo';
 
 const Header = () => {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
     const [scrollPosition, setScrollPosition] = useState<number>(0);
     const [menuColor, setMenuColor] = useState<string>('fff');
+    const [headerColor, setHeaderColor] = useState<string>(Color.WHITE);
 
     useEffect(() => {
         if (isOpenMenu) {
@@ -34,18 +37,24 @@ const Header = () => {
 
     useEffect(() => {
         if (scrollPosition >= window.innerHeight) {
-            setMenuColor('#333');
+            setMenuColor(Color.GRAY);
         } else {
-            setMenuColor('#fff');
+            setMenuColor(Color.WHITE);
         }
     }, [scrollPosition]);
 
     const toggleOpenMenu = () => {
         setIsOpenMenu(true);
+        setTimeout(() => {
+            setHeaderColor(Color.GRAY);
+        }, 250);
     };
 
     const toggleCloseMenu = () => {
         setIsOpenMenu(false);
+        setTimeout(() => {
+            setHeaderColor(Color.WHITE);
+        }, 250);
     };
 
     return (
@@ -54,9 +63,7 @@ const Header = () => {
                 <div className={styles.header__content}>
                     <h1 className={styles.header__logo}>
                         <Link className={styles.header__logoLink} href="/">
-                            <span>АИВА</span>
-                            <br />
-                            Транспортная компания
+                            <Logo height={33} fill={headerColor} />
                         </Link>
                     </h1>
                 </div>
