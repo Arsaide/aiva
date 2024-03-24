@@ -4,6 +4,7 @@ import Info from '@/components/pages/home-page/info-section/InfoSection';
 import CarParkSection from '@/components/pages/home-page/car-park-section/CarParkSection';
 import GpsBannerSection from '@/components/pages/home-page/banners/gps-banner-section/GpsBannerSection';
 import BelayBannerSection from '@/components/pages/home-page/banners/belay-banner-section/BelayBannerSection';
+import GallerySection from '@/components/pages/home-page/gallery-section/GallerySection';
 
 const HomePage = () => {
     return (
@@ -19,6 +20,7 @@ const HomePage = () => {
                     'Мы всегда сможем отследить местонахождение Вашего груза и связаться с водителем'
                 }
             />
+            <GallerySection />
             <BelayBannerSection
                 title={'Ваш груз застрахован на 10 млн. рублей'}
                 text={
