@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import styles from './GpsBannerSection.module.scss';
 import Card from '@/components/layout/ui/card/Card';
 
@@ -7,18 +7,11 @@ interface IBannerPage {
     text: string;
 }
 
-const GpsBannerSection: FC<IBannerPage> = ({
-    title,
-    text,
-}) => {
+const GpsBannerSection: FC<IBannerPage> = ({ title, text }) => {
     return (
-        <section
-            className={styles.page}
-        >
+        <section className={styles.page}>
             <div className={'container'}>
-                <div
-                    className={styles.content}
-                >
+                <div className={styles.content}>
                     <Card title={title} text={text} />
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import { ICarParkList } from '@/components/pages/home-page/car-park/ICarParkList';
+import { ICarParkList } from '@/components/pages/home-page/car-park-section/ICarParkList';
 
 export const carParkDB: ICarParkList[] = [
     {

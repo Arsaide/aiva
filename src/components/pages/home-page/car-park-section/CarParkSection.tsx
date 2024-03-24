@@ -1,13 +1,13 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import styles from './CarPark.module.scss';
-import { carParkDB } from '@/components/pages/home-page/car-park/CarParkDB';
+import styles from './CarParkSection.module.scss';
+import { carParkDB } from '@/components/pages/home-page/car-park-section/CarParkDB';
 import Image from 'next/image';
-import CarCard from '@/components/pages/home-page/car-park/car-card/CarCard';
+import CarCard from '@/components/pages/home-page/car-park-section/car-card/CarCard';
 import Modal from '@/components/layout/ui/modal/Modal';
 import SmallButton from '@/components/layout/ui/buttons/small-button/SmallButton';
 
-const CarPark = () => {
+const CarParkSection = () => {
     const [activeModalId, setActiveModalId] = useState<number | null>(null);
     const [visibleItems, setVisibleItems] = useState<number>(3);
     const [loadedItems, setLoadedItems] = useState<number>(visibleItems);
@@ -84,4 +84,4 @@ const CarPark = () => {
     );
 };
 
-export default CarPark;
+export default CarParkSection;

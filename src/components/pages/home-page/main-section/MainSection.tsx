@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Main.module.scss';
+import styles from './MainSection.module.scss';
 import LargeButton from '@/components/layout/ui/buttons/large-button/LargeButton';
 
-const Main = () => {
+const MainSection = () => {
     return (
         <section className={styles.main}>
             <div className={'page__container'}>
@@ -17,4 +17,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default MainSection;

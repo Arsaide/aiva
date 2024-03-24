@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import styles from './BelayBannerSection.module.scss';
 import Card from '@/components/layout/ui/card/Card';
 

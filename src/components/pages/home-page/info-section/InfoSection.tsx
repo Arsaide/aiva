@@ -1,10 +1,10 @@
 'use client';
-import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
-import styles from './Info.module.scss';
+import React, { memo, useEffect, useMemo, useState } from 'react';
+import styles from './InfoSection.module.scss';
 import { Star, Trophy, Truck, Users } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
-const Info = () => {
+const InfoSection = () => {
     const [employeeCount, setEmployeeCount] = useState<number>(0);
     const [shipmentCount, setShipmentCount] = useState<number>(0);
     const [ratingCount, setRatingCount] = useState<number>(0);
@@ -115,4 +115,4 @@ const Info = () => {
     );
 };
 
-export default memo(Info);
+export default memo(InfoSection);
