@@ -1,19 +1,19 @@
 .page {
-  //background: url("../../../../../public/backgrounds/gps-bg.jpg") 0 65%/cover no-repeat;
+  background: url("../../../../../../public/backgrounds/belay-bg.jpg") 0 65%/cover no-repeat;
   width: 100%;
   position: relative;
   overflow: hidden;
 
-  //&::before {
-  //  content: '';
-  //  width: 50%;
-  //  height: 100%;
-  //  backdrop-filter: blur(20.5px);
-  //  position: absolute;
-  //  z-index: 2;
-  //  left: 0;
-  //  top: 0;
-  //}
+  &::before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    backdrop-filter: blur(20.5px);
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 0;
+  }
 }
 
 .content {
@@ -22,6 +22,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin-left: 200px
 }
 
 @media(max-width: 879.98px) {
@@ -29,6 +30,10 @@
     &::before {
       backdrop-filter: blur(10.5px);
     }
+  }
+
+  .content {
+    margin: 0;
   }
 }
 

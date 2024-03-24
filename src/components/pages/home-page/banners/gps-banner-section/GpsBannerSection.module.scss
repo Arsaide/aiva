@@ -1,0 +1,46 @@
+.page {
+  background: url("../../../../../../public/backgrounds/gps-bg.jpg") 0 65%/cover no-repeat;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    backdrop-filter: blur(20.5px);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-right: 200px;
+}
+
+@media(max-width: 879.98px) {
+  .page {
+    &::before {
+      backdrop-filter: blur(10.5px);
+    }
+  }
+
+  .content {
+    margin: 0;
+  }
+}
+
+@media(max-width: 589.98px) {
+  .page {
+    &::before {
+      display: none;
+    }
+  }
+}
