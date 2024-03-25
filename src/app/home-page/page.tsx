@@ -5,6 +5,7 @@ import CarParkSection from '@/components/pages/home-page/car-park-section/CarPar
 import GpsBannerSection from '@/components/pages/home-page/banners/gps-banner-section/GpsBannerSection';
 import BelayBannerSection from '@/components/pages/home-page/banners/belay-banner-section/BelayBannerSection';
 import GallerySection from '@/components/pages/home-page/gallery-section/GallerySection';
+import ServicesSection from '@/components/pages/home-page/services-section/ServicesSection';
 
 const HomePage = () => {
     return (
@@ -27,6 +28,7 @@ const HomePage = () => {
                     'Мы предлагаем: полный комплекс услуг по страхованию груза; полис экспедированной ответственности.'
                 }
             />
+            <ServicesSection />
         </>
     );
 };
