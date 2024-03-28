@@ -6,6 +6,7 @@ import GpsBannerSection from '@/components/pages/home-page/banners/gps-banner-se
 import BelayBannerSection from '@/components/pages/home-page/banners/belay-banner-section/BelayBannerSection';
 import GallerySection from '@/components/pages/home-page/gallery-section/GallerySection';
 import ServicesSection from '@/components/pages/home-page/services-section/ServicesSection';
+import ClientSection from '@/components/pages/home-page/clients-section/ClientsSection';
 
 const HomePage = () => {
     return (
@@ -29,6 +30,7 @@ const HomePage = () => {
                 }
             />
             <ServicesSection />
+            <ClientSection />
         </>
     );
 };
