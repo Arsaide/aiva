@@ -1,0 +1,87 @@
+.form {
+  max-width: 600px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.btnCnt {
+  width: 100%;
+  text-align: center;
+}
+
+.label {
+  border-bottom: 2px solid var(--white-text);
+  position: relative;
+}
+
+.alert {
+  text-align: center;
+  font-size: 9.16px;
+  font-weight: 400;
+  color: var(--white-text);
+}
+
+.red {
+  color: red;
+}
+
+.label > input:focus + span,
+.label > input:valid + span,
+.label > textarea:focus + span,
+.label > textarea:valid + span{
+  top: -25px;
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.label > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--white-text);
+  opacity: 0.4;
+  z-index: 1;
+  transition: top .3s ease, font-size .3s ease;
+}
+
+.input, {
+  position: relative;
+  z-index: 2;
+  color: var(--white-text);
+}
+
+.textarea {
+  position: relative;
+  z-index: 2;
+  color: var(--white-text);
+  width: 100%;
+  height: 150px;
+  max-height: 150px;
+  overflow: auto;
+  resize: none;
+  transition: top .3s ease, font-size .3s ease;
+}
+
+.btn {
+  color: var(--white-text);
+  border: 2px solid var(--white-text);
+  margin: 50px;
+  padding: clamp(15px, 2vw, 25px) clamp(30px, 4.3vw, 75px);
+  font-size: clamp(23px, 2vw, 37.5px);
+  font-weight: 400;
+  line-height: 24.7px;
+  border-radius: 60px;
+  transition: background-color .2s ease-out 0s;
+
+  &:hover {
+    background-color: var(--white-text);
+    color: var(--red-text);
+  }
+}
+
+

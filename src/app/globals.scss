@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: rgba(218, 41, 28, .7);
+  color: var(--white-text);
+}
+
 ul,
 ol {
   padding: 0;
