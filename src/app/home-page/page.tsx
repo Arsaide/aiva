@@ -8,6 +8,7 @@ import GallerySection from '@/components/pages/home-page/gallery-section/Gallery
 import ServicesSection from '@/components/pages/home-page/services-section/ServicesSection';
 import ClientSection from '@/components/pages/home-page/clients-section/ClientsSection';
 import FormSection from '@/components/pages/home-page/form-section/FormSection';
+import { EmailMessage } from '@/components/email-message/EmailMessage';
 
 const HomePage = () => {
     return (
