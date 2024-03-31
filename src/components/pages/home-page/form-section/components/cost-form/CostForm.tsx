@@ -1,9 +1,9 @@
 'use client';
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import styles from './СostForm.module.scss';
 import { InputMask } from '@react-input/mask';
-import { POST } from '@/app/api/email/send/route';
 import { toast } from 'react-toastify';
+import { validateForm } from '@/components/pages/home-page/form-section/components/cost-form/utils/validateForm';
 
 const CostForm = () => {
     const [inputs, setInputs] = useState({
@@ -13,56 +13,65 @@ const CostForm = () => {
         message: '',
     });
 
+    const [errors, setErrors] = useState({
+        name: '',
+        email: '',
+        number: '',
+        message: '',
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+    const [lastSubmittedAt, setLastSubmittedAt] = useState<number | null>(null);
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        try {
-            const response = await fetch('/api/email/send', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(inputs),
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                setInputs({
-                    name: '',
-                    email: '',
-                    number: '',
-                    message: '',
-                });
-                toast.success('Форма успешно отправлена');
-            } else {
-                toast.error('Ошибка отправки формы');
-            }
-        } catch (error) {
-            console.error('Ошибка при отправке формы:', error);
-            toast.error('Ошибка отправки формы');
+        if (lastSubmittedAt && Date.now() - lastSubmittedAt < 5 * 60 * 1000) {
+            toast.error(
+                'Пожалуйста, подождите 5 минут перед повторной отправкой формы',
+            );
+            return;
         }
-        // const formData = new FormData(event.currentTarget);
-        //
-        // const result = await POST(formData);
-        // console.log(result);
-        // console.log(formData);
-        // if (result) {
-        //     if ('error' in result) {
-        //         toast.error('Ошибка отправки формы');
-        //     } else {
-        //         setInputs({
-        //             name: '',
-        //             email: '',
-        //             number: '',
-        //             message: '',
-        //         });
-        //         toast.success('Форма успешно отправлена');
-        //     }
-        // } else {
-        //     toast.error(
-        //         'Форма больше не активна, обратитесь к владельцу сайта!',
-        //     );
-        // }
+        const { valid, errors: newErrors } = validateForm(inputs);
+
+        if (valid) {
+            try {
+                setIsSubmitting(true);
+                const response = await fetch('/api/email/send', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(inputs),
+                });
+
+                if (response.ok) {
+                    toast.success('Форма успешно отправлена');
+                    setInputs({
+                        name: '',
+                        email: '',
+                        number: '',
+                        message: '',
+                    });
+                    setErrors({
+                        name: '',
+                        email: '',
+                        number: '',
+                        message: '',
+                    });
+                    setLastSubmittedAt(Date.now());
+                } else {
+                    toast.error('Ошибка отправки формы');
+                }
+            } catch (error) {
+                console.error('Ошибка при отправке формы:', error);
+                toast.error('Ошибка отправки формы');
+            } finally {
+                setIsSubmitting(false);
+            }
+        } else {
+            toast.error('Пожалуйста, заполните форму корректно!');
+            setErrors(newErrors);
+        }
     };
 
     return (
@@ -80,13 +89,16 @@ const CostForm = () => {
                             }
                             required
                         />
-                        <span>Ваше имя</span>
+                        <span>Ваше ФИО</span>
+                        {errors.name && (
+                            <p className={styles.error}>{errors.name}</p>
+                        )}
                     </label>
                     <label className={styles.label}>
                         <input
                             className={styles.input}
                             name={'email'}
-                            type={'email'}
+                            type={'text'}
                             value={inputs.email}
                             onChange={e =>
                                 setInputs({ ...inputs, email: e.target.value })
@@ -94,6 +106,9 @@ const CostForm = () => {
                             required
                         />
                         <span>Ваша почта</span>
+                        {errors.email && (
+                            <p className={styles.error}>{errors.email}</p>
+                        )}
                     </label>
                     <label className={styles.label}>
                         <InputMask
@@ -108,6 +123,9 @@ const CostForm = () => {
                             required
                         />
                         <span>Ваш телефон</span>
+                        {errors.number && (
+                            <p className={styles.error}>{errors.number}</p>
+                        )}
                     </label>
                     <label className={styles.label}>
                         <textarea
@@ -125,6 +143,9 @@ const CostForm = () => {
                         <span>
                             Описание перевозки(Откуда-Куда, детали перевозки)
                         </span>
+                        {errors.message && (
+                            <p className={styles.error}>{errors.message}</p>
+                        )}
                     </label>
                 </div>
                 <p className={styles.alert}>
@@ -132,7 +153,9 @@ const CostForm = () => {
                     персональных данных
                 </p>
                 <div className={styles.btnCnt}>
-                    <button className={styles.btn}>Отправить</button>
+                    <button className={styles.btn}>
+                        {isSubmitting ? 'Отправка...' : 'Отправить'}
+                    </button>
                 </div>
             </form>
         </>
