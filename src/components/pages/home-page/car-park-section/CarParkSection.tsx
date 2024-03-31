@@ -37,7 +37,7 @@ const CarParkSection = () => {
     const activeCar = carParkDB.find(item => item.id === activeModalId)?.card;
 
     return (
-        <section className={styles.carpark}>
+        <section className={styles.carpark} id={'carpark'}>
             <div className={'container'}>
                 <h3 className={styles.title}>Наш Автопарк</h3>
                 <ul className={styles.list}>
