@@ -1,9 +1,5 @@
-// 'use server';
-
 import * as React from 'react';
-import styles from './EmailMessage.module.scss';
 import Logo from '@/components/layout/icons/logo/logo';
-import Link from 'next/link';
 import { Color } from '@/lib/colors';
 
 interface EmailTemplateProps {
@@ -13,25 +9,30 @@ interface EmailTemplateProps {
     text: string;
 }
 
-export const EmailMessage: React.FC<Readonly<EmailTemplateProps>> = ({
+export const EmailMessage: React.FC<EmailTemplateProps> = ({
     name,
     number,
     email,
     text,
 }) => (
-    <div className={styles.cnt}>
-        <div className={styles.content}>
-            <h1 className={styles.title}>Клиент</h1>
-            <h2 className={styles.subTitle}>Имя</h2>
-            <p className={styles.text}>{name}</p>
-            <h2 className={styles.subTitle}>Номер телефона:</h2>
-            <p className={styles.text}>{number}</p>
-            <h2 className={styles.subTitle}>Электорнная почта:</h2>
-            <p className={styles.text}>{email}</p>
-            <h2 className={styles.subTitle}>
+    <div style={{ maxWidth: '1000px' }}>
+        <Logo height={33} fill={Color.WHITE} />
+        <div style={{ padding: '10px' }}>
+            <h1 style={{ fontSize: '28px', textAlign: 'center' }}>Клиент</h1>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>Имя</h2>
+            <p>{name}</p>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                Номер телефона:
+            </h2>
+            <p>{number}</p>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                Электорнная почта:
+            </h2>
+            <p>{email}</p>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>
                 Описание перевозки(Откуда-Куда, детали перевозки):
             </h2>
-            <p className={styles.text}>{text}</p>
+            <p>{text}</p>
         </div>
     </div>
 );

@@ -2,7 +2,7 @@
 import React, { memo, useState } from 'react';
 import styles from './СostForm.module.scss';
 import { InputMask } from '@react-input/mask';
-import { sendEmail } from '@/app/api/email/send/route';
+import { POST } from '@/app/api/email/send/route';
 import { toast } from 'react-toastify';
 
 const CostForm = () => {
@@ -15,15 +15,18 @@ const CostForm = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const formData = new FormData(event.currentTarget);
 
-        const result = await sendEmail(formData);
-        console.log(result);
-        console.log(formData);
-        if (result) {
-            if (result.error) {
-                toast.error('Ошибка отправки формы');
-            } else {
+        try {
+            const response = await fetch('/api/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(inputs),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
                 setInputs({
                     name: '',
                     email: '',
@@ -31,12 +34,35 @@ const CostForm = () => {
                     message: '',
                 });
                 toast.success('Форма успешно отправлена');
+            } else {
+                toast.error('Ошибка отправки формы');
             }
-        } else {
-            toast.error(
-                'Форма больше не активна, обратитесь к владельцу сайта!',
-            );
+        } catch (error) {
+            console.error('Ошибка при отправке формы:', error);
+            toast.error('Ошибка отправки формы');
         }
+        // const formData = new FormData(event.currentTarget);
+        //
+        // const result = await POST(formData);
+        // console.log(result);
+        // console.log(formData);
+        // if (result) {
+        //     if ('error' in result) {
+        //         toast.error('Ошибка отправки формы');
+        //     } else {
+        //         setInputs({
+        //             name: '',
+        //             email: '',
+        //             number: '',
+        //             message: '',
+        //         });
+        //         toast.success('Форма успешно отправлена');
+        //     }
+        // } else {
+        //     toast.error(
+        //         'Форма больше не активна, обратитесь к владельцу сайта!',
+        //     );
+        // }
     };
 
     return (
