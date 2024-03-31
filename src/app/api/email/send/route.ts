@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server';
 import { name } from 'eslint-plugin-prettier';
 import { number } from 'prop-types';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend('re_X84kSdkN_M16GTUSNyWVou9Hr4ZZcGEad');
 
 export async function POST(request: Request): Promise<Response> {
     const { name, email, number, message } = await request.json();
