@@ -16,7 +16,7 @@ const GallerySection = () => {
                             >
                                 <Image
                                     className={styles.img}
-                                    src={'/materials/1.jpeg'}
+                                    src={'/materials/1.jpg'}
                                     alt={'Строй материалы, цемент, гипс'}
                                     width={300}
                                     height={250}
@@ -29,7 +29,7 @@ const GallerySection = () => {
                             <div className={styles.imgcnt}>
                                 <Image
                                     className={styles.img}
-                                    src={'/materials/2.jpeg'}
+                                    src={'/materials/2.jpg'}
                                     alt={
                                         'Металические материалы, трубы, прутья'
                                     }
@@ -47,7 +47,7 @@ const GallerySection = () => {
                             >
                                 <Image
                                     className={styles.img}
-                                    src={'/materials/3.jpeg'}
+                                    src={'/materials/3.jpg'}
                                     alt={'Зерновые культуры, зерно'}
                                     width={300}
                                     height={250}
@@ -65,7 +65,7 @@ const GallerySection = () => {
                             >
                                 <Image
                                     className={styles.img}
-                                    src={'/materials/4.jpeg'}
+                                    src={'/materials/4.jpg'}
                                     alt={'Мебель в офис, домой'}
                                     width={300}
                                     height={250}
@@ -78,7 +78,7 @@ const GallerySection = () => {
                             <div className={styles.imgcnt}>
                                 <Image
                                     className={styles.img}
-                                    src={'/materials/5.jpeg'}
+                                    src={'/materials/5.jpg'}
                                     alt={'Запчасти, оборудование'}
                                     width={300}
                                     height={250}
@@ -94,7 +94,7 @@ const GallerySection = () => {
                             >
                                 <Image
                                     className={styles.img}
-                                    src={'/materials/6.jpeg'}
+                                    src={'/materials/6.jpg'}
                                     alt={'Коробки, помощь с переездом'}
                                     width={300}
                                     height={250}

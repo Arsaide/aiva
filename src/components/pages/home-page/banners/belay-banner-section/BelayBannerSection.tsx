@@ -9,7 +9,7 @@ interface IBannerPage {
 
 const BelayBannerSection: FC<IBannerPage> = ({ title, text }) => {
     return (
-        <section className={styles.page}>
+        <section className={styles.page} id={'gray'}>
             <div className={'container'}>
                 <div className={styles.content}>
                     <Card title={title} text={text} />

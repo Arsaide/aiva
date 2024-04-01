@@ -8,11 +8,13 @@ const RecruitForm = () => {
     const [inputs, setInputs] = useState({
         name: '',
         number: '',
+        message: '',
     });
 
     const [errors, setErrors] = useState({
         name: '',
         number: '',
+        message: '',
     });
 
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -43,10 +45,12 @@ const RecruitForm = () => {
                     setInputs({
                         name: '',
                         number: '',
+                        message: '',
                     });
                     setErrors({
                         name: '',
                         number: '',
+                        message: '',
                     });
                     setLastSubmittedAt(Date.now());
                 } else {
@@ -99,6 +103,26 @@ const RecruitForm = () => {
                         <span>Ваш телефон</span>
                         {errors.number && (
                             <p className={styles.error}>{errors.number}</p>
+                        )}
+                    </label>
+                    <label className={styles.label}>
+                        <textarea
+                            name={'message'}
+                            className={styles.textarea}
+                            value={inputs.message}
+                            onChange={e =>
+                                setInputs({
+                                    ...inputs,
+                                    message: e.target.value,
+                                })
+                            }
+                            required
+                        />
+                        <span>
+                            Описание перевозки(Откуда-Куда, детали перевозки)
+                        </span>
+                        {errors.message && (
+                            <p className={styles.error}>{errors.message}</p>
                         )}
                     </label>
                 </div>

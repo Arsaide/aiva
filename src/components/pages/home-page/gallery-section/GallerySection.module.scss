@@ -37,9 +37,10 @@
 }
 
 .img {
-  transition: transform 0.2s ease-out 0s, border 0.2s ease-out 0s;
+  transition: transform 0.2s ease-out 0s, border 0.2s ease-out 0s, filter .2s ease-out 0s;
   &:hover {
     transform: scale(1.1);
+    filter: brightness(110%);
     border: 0;
   }
 }

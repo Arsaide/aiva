@@ -1,6 +1,6 @@
 'use server';
 import { Resend } from 'resend';
-import { OrderMessage } from '@/components/email-messages/order-message/OrderMessage';
+import { OrderMessage } from '@/components/layout/email-messages/order-message/OrderMessage';
 import { NextResponse } from 'next/server';
 
 const resend = new Resend('re_X84kSdkN_M16GTUSNyWVou9Hr4ZZcGEad');

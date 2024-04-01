@@ -24,6 +24,33 @@
   }
 }
 
-.content {
+.subTitle {
+  color: var(--gray-text);
+  font-size: 20.65px;
+  font-weight: 700;
+  line-height: 160%;
+  padding: 15px 0;
+}
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts {
+  display: flex;
+  gap: 15px;
+}
+
+.numbers {
+  display: flex;
+  flex-direction: column;
+  > a {
+    color: var(--gray-text);
+    transition: color .2s ease-out 0s;
+    &:hover {
+      opacity: .7;
+    }
+  }
 }

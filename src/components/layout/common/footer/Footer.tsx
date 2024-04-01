@@ -15,27 +15,39 @@ const Footer = () => {
                     <div className={styles.menu}>
                         <ul className={styles.navList}>
                             <li className={styles.item}>
-                                <Link href={'#gallery'} className={styles.link}>
+                                <Link
+                                    href={'/#gallery'}
+                                    className={styles.link}
+                                >
                                     Мы перевозим
                                 </Link>
                             </li>
                             <li className={styles.item}>
-                                <Link href={'#carpark'} className={styles.link}>
+                                <Link
+                                    href={'/#carpark'}
+                                    className={styles.link}
+                                >
                                     Автопарк
                                 </Link>
                             </li>
                             <li className={styles.item}>
-                                <Link href={'#clients'} className={styles.link}>
+                                <Link
+                                    href={'/#clients'}
+                                    className={styles.link}
+                                >
                                     Клиенты
                                 </Link>
                             </li>
                             <li className={styles.item}>
-                                <Link href={'#cost'} className={styles.link}>
+                                <Link href={'/#cost'} className={styles.link}>
                                     Стоимость
                                 </Link>
                             </li>
                             <li className={styles.item}>
-                                <Link className={styles.link} href={''}>
+                                <Link
+                                    href={'/vacancies'}
+                                    className={styles.link}
+                                >
                                     Вакансии
                                 </Link>
                             </li>

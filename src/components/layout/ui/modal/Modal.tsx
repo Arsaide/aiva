@@ -13,7 +13,7 @@ const Modal: FC<IModal> = ({ children, active, setActive }) => {
     useEffect(() => {
         if (active) {
             if (window.innerWidth > 768) {
-                document.body.style.paddingRight = '17px';
+                document.body.style.paddingRight = '10px';
             }
             document.body.style.overflow = 'hidden';
         } else {

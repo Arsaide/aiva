@@ -4,7 +4,7 @@ import CostForm from '@/components/pages/home-page/form-section/components/cost-
 
 const FormSection = () => {
     return (
-        <section className={styles.section} id={'cost'}>
+        <section className={styles.section} id={'cost gray'}>
             <div className={'container'}>
                 <div className={styles.content}>
                     <h3 className={styles.title}>
