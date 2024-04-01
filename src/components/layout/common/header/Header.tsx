@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Color } from '@/lib/colors';
 import Logo from '@/components/layout/icons/logo/logo';
-import { Link as ScrollLink } from 'react-scroll';
 
 const Header = () => {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
@@ -88,44 +87,41 @@ const Header = () => {
                 >
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>
-                            <ScrollLink
-                                to={'gallery'}
+                            <Link
+                                href={'#gallery'}
                                 className={styles.menu__link}
                             >
                                 Мы перевозим
-                            </ScrollLink>
+                            </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <ScrollLink
-                                to={'carpark'}
+                            <Link
+                                href={'#carpark'}
                                 className={styles.menu__link}
                             >
                                 Автопарк
-                            </ScrollLink>
+                            </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <ScrollLink
-                                to={'clients'}
+                            <Link
+                                href={'#clients'}
                                 className={styles.menu__link}
                             >
                                 Клиенты
-                            </ScrollLink>
+                            </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <ScrollLink
-                                className={styles.menu__link}
-                                to={'cost'}
-                            >
+                            <Link className={styles.menu__link} href={'#cost'}>
                                 Стоимость
-                            </ScrollLink>
+                            </Link>
                         </li>
                         <li className={styles.menu__item}>
-                            <ScrollLink
-                                to={'footer'}
+                            <Link
+                                href={'#footer'}
                                 className={styles.menu__link}
                             >
                                 Контакты
-                            </ScrollLink>
+                            </Link>
                         </li>
                         <li className={styles.menu__item}>
                             <Link

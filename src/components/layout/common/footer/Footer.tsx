@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
@@ -14,23 +15,23 @@ const Footer = () => {
                     <div className={styles.menu}>
                         <ul className={styles.navList}>
                             <li className={styles.item}>
-                                <Link className={styles.link} href={''}>
+                                <Link href={'#gallery'} className={styles.link}>
                                     Мы перевозим
                                 </Link>
                             </li>
                             <li className={styles.item}>
-                                <Link className={styles.link} href={''}>
+                                <Link href={'#carpark'} className={styles.link}>
                                     Автопарк
                                 </Link>
                             </li>
                             <li className={styles.item}>
-                                <Link className={styles.link} href={'#gallery'}>
+                                <Link href={'#clients'} className={styles.link}>
                                     Клиенты
                                 </Link>
                             </li>
                             <li className={styles.item}>
-                                <Link className={styles.link} href={''}>
-                                    Документы
+                                <Link href={'#cost'} className={styles.link}>
+                                    Стоимость
                                 </Link>
                             </li>
                             <li className={styles.item}>
