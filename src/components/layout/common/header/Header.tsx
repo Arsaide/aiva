@@ -88,7 +88,7 @@ const Header = () => {
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__item}>
                             <Link
-                                href={'#gallery'}
+                                href={'/#gallery'}
                                 className={styles.menu__link}
                             >
                                 Мы перевозим
@@ -96,7 +96,7 @@ const Header = () => {
                         </li>
                         <li className={styles.menu__item}>
                             <Link
-                                href={'#carpark'}
+                                href={'/#carpark'}
                                 className={styles.menu__link}
                             >
                                 Автопарк

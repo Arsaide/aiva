@@ -1,0 +1,74 @@
+.form {
+  max-width: 600px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.btnCnt {
+  width: 100%;
+  text-align: center;
+}
+
+.label {
+  border-bottom: 2px solid var(--gray-text);
+  position: relative;
+}
+
+.alert {
+  text-align: center;
+  font-size: 9.16px;
+  font-weight: 400;
+  color: var(--gray-text);
+}
+
+.red {
+  color: red;
+}
+
+.label > input:focus + span,
+.label > input:valid + span, {
+  top: -25px;
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.label > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--gray-text);
+  opacity: 0.4;
+  z-index: 1;
+  transition: top .3s ease, font-size .3s ease;
+}
+
+.input, {
+  position: relative;
+  z-index: 2;
+  color: var(--gray-text);
+  width: 100%;
+}
+
+.btn {
+  color: var(--gray-text);
+  border: 2px solid var(--gray-text);
+  margin: 50px;
+  padding: clamp(15px, 2vw, 25px) clamp(30px, 4.3vw, 75px);
+  font-size: clamp(23px, 2vw, 37.5px);
+  font-weight: 400;
+  line-height: 24.7px;
+  border-radius: 60px;
+  transition: border .2s ease-out 0s;
+
+  &:hover {
+    border: 2px solid var(--red-text);
+    color: var(--red-text);
+  }
+}
+
+

@@ -1,24 +1,22 @@
 'use server';
 import { Resend } from 'resend';
-import { OrderMessage } from '@/components/email-messages/order-message/OrderMessage';
 import { NextResponse } from 'next/server';
+import { VacanciesMessage } from '@/components/email-messages/vacancies-message/VacanciesMessage';
 
 const resend = new Resend('re_X84kSdkN_M16GTUSNyWVou9Hr4ZZcGEad');
 
 export async function POST(request: Request): Promise<Response> {
-    const { name, email, number, message } = await request.json();
+    const { name, number } = await request.json();
 
     try {
         await resend.emails.send({
             from: 'onboarding@resend.dev',
-            to: email,
-            subject: 'ЗАКАЗ - ФОРМА КЛИЕНТА',
-            text: message,
-            react: OrderMessage({
+            to: 'arsaidekm@gmail.com',
+            subject: 'ВАКАНСИЯ - ФОРМА КЛИЕНТ',
+            text: 'message',
+            react: VacanciesMessage({
                 name: name,
                 number: number,
-                email: email,
-                text: message,
             }),
         });
 

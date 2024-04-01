@@ -1,5 +1,5 @@
 .main {
-  background: url("../../../../../public/main-background.jpg") 0 40%/cover no-repeat;
+  background: url("../../../../../public/backgrounds/vacancies-bg.jpeg") 0 40%/cover no-repeat;
   width: 100%;
 }
 
@@ -7,19 +7,27 @@
   display: flex;
   flex-direction: column;
   justify-content: end;
-  gap: 60px;
+  align-items: center;
   height: 100vh;
   padding: 120px 0;
 }
 
 .phraze {
-  --fz: clamp(25px, 3vw, 45px);
+  --fz: clamp(25px, 5vw, 70px);
   --lh: calc(var(--fz)/85 * 100%);
   color: var(--white-text);
   font-size: var(--fz);
   font-weight: 700;
   line-height: var(--lh);
-  max-width: 660px;
+}
+
+.desc {
+  font-size: 15px;
+  color: var(--white-text);
+}
+
+.text {
+  max-width: 750px;
 }
 
 @media(max-width: 549.98px) {

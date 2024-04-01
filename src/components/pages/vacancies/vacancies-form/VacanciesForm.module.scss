@@ -1,0 +1,29 @@
+.section {
+  padding: clamp(50px, 5vw, 80px) 0;
+
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(27.5px, 5vw, 37.5px);
+  font-weight: 700;
+  line-height: calc(34.7 / 37.5 * 100%);
+  color: var(--red-text);
+  position: relative;
+  margin-bottom: clamp(50px, 5vw, 80px);
+  display: flex;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    width: 130px;
+    height: 2px;
+    background-color: var(--red-text);
+    position: absolute;
+    bottom: -15px;
+  }
+}
+
+.content {
+
+}

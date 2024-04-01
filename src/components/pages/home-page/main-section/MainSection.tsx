@@ -8,7 +8,8 @@ const MainSection = () => {
             <div className={'page__container'}>
                 <div className={styles.content}>
                     <h2 className={styles.phraze}>
-                        В Авангарде траспортной логистики
+                        Мы — ваш надёжный партнёр в мире грузоперевозок! Быстро,
+                        безопасно и с комфортом!
                     </h2>
                     <LargeButton text={'Заказать звонок'} href={'/'} />
                 </div>
