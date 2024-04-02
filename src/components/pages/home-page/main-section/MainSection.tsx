@@ -11,7 +11,7 @@ const MainSection = () => {
                         Мы — ваш надёжный партнёр в мире грузоперевозок! Быстро,
                         безопасно и с комфортом!
                     </h2>
-                    <LargeButton text={'Заказать звонок'} href={'/'} />
+                    <LargeButton text={'Заказать звонок'} href={'#cost'} />
                 </div>
             </div>
         </section>

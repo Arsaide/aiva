@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styles from './LargeButton.module.scss';
+import Link from 'next/link';
 
 interface IButton {
     text: string;
@@ -8,9 +9,9 @@ interface IButton {
 
 const LargeButton: FC<IButton> = ({ text, href }) => {
     return (
-        <a href={href} className={styles.btn}>
+        <Link href={href} className={styles.btn}>
             {text}
-        </a>
+        </Link>
     );
 };
 
