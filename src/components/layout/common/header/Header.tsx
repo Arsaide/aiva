@@ -78,13 +78,13 @@ const Header = () => {
                     <div
                         className={styles.menu__burger}
                         onClick={toggleCloseMenu}
-                        style={{
-                            backgroundColor: burgerBackgroundColor,
-                            boxShadow:
-                                burgerBackgroundColor === '#fff'
-                                    ? '30px -25px 0px 50px rgb(255,255,255)'
-                                    : 'none',
-                        }}
+                        // style={{
+                        //     backgroundColor: burgerBackgroundColor,
+                        //     boxShadow:
+                        //         burgerBackgroundColor === '#fff'
+                        //             ? '25px -25px 0px 25px rgb(255,255,255)'
+                        //             : 'none',
+                        // }}
                     >
                         <X color={menuColor} width={44} height={44} />
                     </div>
@@ -96,7 +96,7 @@ const Header = () => {
                             backgroundColor: burgerBackgroundColor,
                             boxShadow:
                                 burgerBackgroundColor === '#fff'
-                                    ? '28px -25px 0px 44px rgb(255,255,255)'
+                                    ? '25px -25px 0px 25px rgb(255,255,255)'
                                     : 'none',
                         }}
                     >
