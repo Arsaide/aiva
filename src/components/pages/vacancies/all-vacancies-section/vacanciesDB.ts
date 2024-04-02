@@ -4,7 +4,6 @@ export const vacanciesDB: IVacancies[] = [
     {
         id: 1,
         card: {
-            img: '/car-park/card1.png',
             alt: 'Название',
             title: 'Название',
             cost: 'от *** до *** руб. в месяц',
@@ -16,7 +15,6 @@ export const vacanciesDB: IVacancies[] = [
     {
         id: 2,
         card: {
-            img: '/car-park/card1.png',
             alt: 'Название',
             title: 'Название',
             cost: 'от *** до *** руб. в месяц',
@@ -28,7 +26,6 @@ export const vacanciesDB: IVacancies[] = [
     {
         id: 3,
         card: {
-            img: '/car-park/card1.png',
             alt: 'Название',
             title: 'Название',
             cost: 'от *** до *** руб. в месяц',
@@ -40,7 +37,6 @@ export const vacanciesDB: IVacancies[] = [
     {
         id: 4,
         card: {
-            img: '/car-park/card1.png',
             alt: 'Название',
             title: 'Название',
             cost: 'от *** до *** руб. в месяц',
@@ -52,7 +48,6 @@ export const vacanciesDB: IVacancies[] = [
     {
         id: 5,
         card: {
-            img: '/car-park/card1.png',
             alt: 'Название',
             title: 'Название',
             cost: 'от *** до *** руб. в месяц',

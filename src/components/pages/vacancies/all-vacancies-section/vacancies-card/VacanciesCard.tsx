@@ -11,7 +11,7 @@ const VacanciesCard: FC<ICard> = ({ card }) => {
     return (
         <div className={styles.content}>
             <div className={styles.image}>
-                <Image src={card.img} alt={card.alt} width={254} height={171} />
+                {/*<Image src={card.img} alt={card.alt} width={254} height={171} />*/}
                 <h5 className={styles.title}>{card.title}</h5>
             </div>
             <div className={styles.props}>

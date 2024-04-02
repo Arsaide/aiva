@@ -4,7 +4,6 @@ export interface IVacancies {
 }
 
 export interface IVacanciesCard {
-    img: string;
     alt: string;
     title: string;
     cost: string;

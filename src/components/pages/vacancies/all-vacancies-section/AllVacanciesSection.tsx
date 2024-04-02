@@ -25,13 +25,13 @@ const AllVacanciesSection = () => {
                                 onClick={() => setActiveModalId(item.id)}
                                 className={styles.card}
                             >
-                                <Image
-                                    src={item.card.img}
-                                    alt={item.card.alt}
-                                    width={400}
-                                    height={320}
-                                    loading={'lazy'}
-                                />
+                                {/*<Image*/}
+                                {/*    src={item.card.img}*/}
+                                {/*    alt={item.card.alt}*/}
+                                {/*    width={400}*/}
+                                {/*    height={320}*/}
+                                {/*    loading={'lazy'}*/}
+                                {/*/>*/}
                                 <h4 className={styles.cardTitle}>
                                     {item.card.title}
                                 </h4>
